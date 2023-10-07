@@ -3,7 +3,7 @@ package com.ycx.mixin;
 
 import com.ycx.ClientHandler.AutoEat.AutoEat;
 import com.ycx.ClientHandler.Elytra.Elytra;
-import com.ycx.ClientHandler.BelowBlock.BelowBlock;
+import com.ycx.ClientHandler.AutoBridge.AutoBridge;
 import com.ycx.MainClient;
 import com.ycx.config.Configs;
 
@@ -38,8 +38,8 @@ public class ClientPlayerEntityMixin {
             AutoEat.autoEat();
         }
 
-        if (Configs.AUTOBELOW.getBooleanValue()) {
-            BelowBlock.water();
+        if (Configs.AUTOBELOW.getBooleanValue() && !input.sneaking) {
+            AutoBridge.bridge();
         }
     }
 

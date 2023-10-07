@@ -1,6 +1,5 @@
 package com.ycx.mixin;
 
-import com.ycx.ClientHandler.Elytra.Elytra;
 import com.ycx.MainClient;
 import com.ycx.config.Configs;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
@@ -17,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import static com.ycx.ClientHandler.Synth.Synth.*;
+import static com.ycx.ClientHandler.QuickStore.QuickStorage.*;
 
 @Mixin(ClientPlayNetworkHandler.class)
 public class ClientPlayNetworkHandlerMixin {

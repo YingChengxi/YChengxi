@@ -1,4 +1,4 @@
-package com.ycx.ClientHandler.Synth;
+package com.ycx.ClientHandler.QuickStore;
 
 import com.ycx.ClientHandler.ScreenHandler.ClickSlot;
 import com.ycx.MainClient;
@@ -21,7 +21,7 @@ import net.minecraft.util.math.Box;
 
 import static net.minecraft.block.ShulkerBoxBlock.FACING;
 
-public class Synth {
+public class QuickStorage {
     public static boolean isLoadMod = FabricLoader.getInstance().isModLoaded("itemscroller");
     public static MinecraftClient mc = MainClient.MC;
     static RecipePattern recipe = null;

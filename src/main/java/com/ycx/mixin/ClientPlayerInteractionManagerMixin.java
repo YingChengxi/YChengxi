@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import static com.ycx.ClientHandler.Synth.Synth.*;
+import static com.ycx.ClientHandler.QuickStore.QuickStorage.*;
 
 
 @Mixin(ClientPlayerInteractionManager.class)
