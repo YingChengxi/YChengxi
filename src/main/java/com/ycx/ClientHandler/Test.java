@@ -11,7 +11,7 @@ public class Test implements IHotkeyCallback {
     @Override
     public boolean onKeyAction(KeyAction action, IKeybind key) {
 
-        System.out.print("hahahahahahaha");
+
 
        return true;
     }
