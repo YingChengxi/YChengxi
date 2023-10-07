@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "ycx",
+  "version": "${version}",
+  "name": "YChengxi",
+  "description": "",
+  "authors": [
+    "YChengxi"
+  ],
+  "license": "MIT",
+  "icon": "assets/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.ycx.MainClient"
+    ],
+    "modmenu": [
+      "com.ycx.config.ModMenu.ModMenuApi"
+    ]
+  },
+  "mixins": [
+    "ycx.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": "*",
+    "fabric": "*",
+    "minecraft": "*"
+  },
+  "suggests": {
+    "modmenu": "*"
+  }
+}
