@@ -31,8 +31,8 @@ public class Configs {
     public static final ConfigBoolean               AUTOEAT_FIGHT        = TrueAdd.AUTOEAT.add(new ConfigBoolean("  → 打架的时候吃？",false,"瞄准实体的时候是否自动进食"));
 
 
-    //合成助手
-    public static final ConfigBooleanHotkeyed       SYNTH                = Category.GENERAL.add(new ConfigBooleanHotkeyed("合成助手",false,"","根据ItemScroller模组的当前选中配方，\n鼠标左键点击扔出配方物品，右键存储合成物品"));
+    //存取助手
+    public static final ConfigBooleanHotkeyed       AUTOSTORE            = Category.GENERAL.add(new ConfigBooleanHotkeyed("合成存取助手",false,"","根据ItemScroller模组的当前选中配方，\n鼠标左键点击扔出配方物品，右键存储合成物品"));
 
 
     //TEST

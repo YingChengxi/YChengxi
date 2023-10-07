@@ -24,7 +24,7 @@ public class ClientPlayerInteractionManagerMixin {
 
     @Inject(at = @At("HEAD"),method = "interactBlock")
     public void interactBlock(ClientPlayerEntity player, ClientWorld world, Hand hand, BlockHitResult hitResult, CallbackInfoReturnable<ActionResult> cir){
-        if(isLoadMod && Configs.SYNTH.getBooleanValue() && !runningDrop && invAvailable()){
+        if(isLoadMod && Configs.AUTOSTORE.getBooleanValue() && !runningDrop && invAvailable()){
             runningStore = true;
             //System.out.println("Store start\n");
 
@@ -33,7 +33,7 @@ public class ClientPlayerInteractionManagerMixin {
     }
     @Inject(at = @At("HEAD"),method = "attackBlock")
     public void attackBlock(CallbackInfoReturnable<Boolean> cir){
-        if(isLoadMod && Configs.SYNTH.getBooleanValue() && !runningStore && invAvailable()){
+        if(isLoadMod && Configs.AUTOSTORE.getBooleanValue() && !runningStore && invAvailable()){
             runningDrop = true;
             //System.out.println("Drop start\n");
             assert mc.interactionManager != null;
