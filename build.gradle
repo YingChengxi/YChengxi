@@ -1,9 +1,15 @@
+import java.text.SimpleDateFormat
+
 plugins {
     id 'fabric-loom' version '1.2-SNAPSHOT'
 }
 
+static def getCurrentTimestamp() {
+    return new SimpleDateFormat("yyMMddHHmm").format(new Date())
+}
+
 archivesBaseName = project.mod_filename
-version = project.mod_version
+version = "${minecraft_version}-${getCurrentTimestamp()}-${project.mod_version}"
 group = project.maven_group
 
 repositories {
@@ -24,7 +30,7 @@ dependencies {
     modImplementation "fi.dy.masa.malilib:malilib-fabric-${project.malilib_minecraft_version}:${project.malilib_version}"
     modImplementation "curse.maven:item-scroller-${project.item_scroller_projectid}:${project.item_scroller_fileid}"
     modImplementation "maven.modrinth:modmenu:${project.mod_menu_version}"
-    }
+}
 
 processResources {
     inputs.property "version", project.version
@@ -52,4 +58,3 @@ jar {
         rename { "${it}_${project.archivesBaseName}"}
     }
 }
-
