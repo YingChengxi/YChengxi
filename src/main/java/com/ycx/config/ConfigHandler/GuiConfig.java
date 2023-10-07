@@ -2,6 +2,7 @@ package com.ycx.config.ConfigHandler;
 
 import com.ycx.MainClient;
 import com.ycx.config.Category;
+import com.ycx.config.Configs;
 import fi.dy.masa.malilib.gui.GuiConfigsBase;
 import fi.dy.masa.malilib.gui.button.ButtonGeneric;
 import fi.dy.masa.malilib.util.StringUtils;
@@ -23,6 +24,7 @@ public class GuiConfig extends GuiConfigsBase {
         int x = 10, y = 26;
         // tab buttons are set
         for (Category category : Category.values()) {
+            if (category == Category.DEBUG && !Configs.DEBUG.getBooleanValue()) continue;
             ButtonGeneric tabButton = new TabButton(category, x, y, -1, 20, StringUtils.translate(category.getKey()));
             tabButton.setEnabled(GuiConfig.currentTab != category );
             this.addButton(tabButton, (buttonBase, i) -> {
