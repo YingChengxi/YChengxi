@@ -38,7 +38,7 @@ public class ClientPlayerEntityMixin {
             AutoEat.autoEat();
         }
 
-        if (Configs.AUTOBELOW.getBooleanValue() && !input.sneaking) {
+        if (Configs.AUTOBRIDGE.getBooleanValue() && !input.sneaking) {
             AutoBridge.bridge();
         }
     }

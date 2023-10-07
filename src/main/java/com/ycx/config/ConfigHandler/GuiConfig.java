@@ -2,7 +2,6 @@ package com.ycx.config.ConfigHandler;
 
 import com.ycx.MainClient;
 import com.ycx.config.Category;
-import com.ycx.config.Configs;
 import fi.dy.masa.malilib.gui.GuiConfigsBase;
 import fi.dy.masa.malilib.gui.button.ButtonGeneric;
 import fi.dy.masa.malilib.util.StringUtils;
@@ -19,7 +18,6 @@ public class GuiConfig extends GuiConfigsBase {
 
     @Override
     public void initGui() {
-        Configs.ADDCONFIG();
         super.initGui();
         this.clearOptions();
         int x = 10, y = 26;

@@ -3,7 +3,6 @@ package com.ycx.config.ConfigHandler;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.ycx.config.Category;
-import com.ycx.config.TrueAdd;
 import fi.dy.masa.malilib.config.ConfigUtils;
 import fi.dy.masa.malilib.config.IConfigHandler;
 import fi.dy.masa.malilib.util.JsonUtils;
@@ -29,8 +28,6 @@ public class ConfigHandler implements IConfigHandler {
 
                 for (Category category : Category.values())
                     ConfigUtils.readConfigBase((JsonObject)jsonElement, category.name(), category.getConfigs());
-                for (TrueAdd trueAdd : TrueAdd.values())
-                    ConfigUtils.readConfigBase((JsonObject)jsonElement, trueAdd.name(), trueAdd.getConfigs());
             }
         }
     }
@@ -46,8 +43,6 @@ public class ConfigHandler implements IConfigHandler {
 
             for (Category category : Category.values())
                     ConfigUtils.writeConfigBase(configRoot, category.name(), category.getConfigs());
-            for (TrueAdd trueAdd : TrueAdd.values())
-                ConfigUtils.writeConfigBase(configRoot, trueAdd.name(), trueAdd.getConfigs());
 
             JsonUtils.writeJsonToFile(configRoot, new File(FILE_PATH));
         }
