@@ -1,6 +1,5 @@
 package com.ycx;
 
-import com.ycx.ClientHandler.Command.CommandRegister;
 import com.ycx.ClientHandler.Test;
 import com.ycx.config.ConfigHandler.ConfigHandler;
 import com.ycx.config.Configs;
@@ -30,6 +29,5 @@ public class MainClient implements ClientModInitializer {
         Configs.MENU_OPEN_KEY.getKeybind().setCallback(new KeyBindHandler());
         Configs.TEST.getKeybind().setCallback(new Test());
 
-        CommandRegister.register();
     }
 }

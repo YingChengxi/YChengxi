@@ -21,19 +21,7 @@ public class Test implements IHotkeyCallback {
     public boolean onKeyAction(KeyAction action, IKeybind key) {
 
         ClientPlayerEntity player = mc.player;
-// 获取玩家脚下的方块位置
-        BlockPos blockPos = player.getBlockPos().down();
 
-        // 创建一个 PlayerInteractBlockC2SPacket 用于模拟右击
-        Direction direction = Direction.DOWN;
-        Vec3d vec = Vec3d.ofBottomCenter(blockPos);
-        PlayerInteractBlockC2SPacket packet = new PlayerInteractBlockC2SPacket(Hand.MAIN_HAND, new BlockHitResult(vec, direction, blockPos, false));
-
-        // 发送包
-        mc.getNetworkHandler().sendPacket(packet);
-
-        // 延迟一段时间后再次发送包来收回水
-        mc.execute(() -> mc.getNetworkHandler().sendPacket(packet));
 
        return true;
     }
