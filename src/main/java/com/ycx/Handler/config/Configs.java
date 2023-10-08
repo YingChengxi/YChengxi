@@ -35,7 +35,6 @@ public class Configs {
 
     //DEBUG
     public static final ConfigBoolean               DEBUG                   = Category.DEBUG.add(new ConfigBoolean("DEBUG显示开关", false, "DEBUG显示开关"));
-
     public static final ConfigHotkey                TEST                    = Category.DEBUG.add(new ConfigHotkey("Test", "", "没有任何作用"));
 
     //自动搭路
