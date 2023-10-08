@@ -1,10 +1,10 @@
 package com.ycx;
 
-import com.ycx.ClientHandler.Test;
-import com.ycx.config.ConfigHandler.ConfigHandler;
-import com.ycx.config.Configs;
-import com.ycx.config.KeyBind.KeyBindHandler;
-import com.ycx.config.KeyBind.KeyBindProvider;
+import com.ycx.Client.Test;
+import com.ycx.Handler.config.ConfigHandler.ConfigHandler;
+import com.ycx.Handler.config.Configs;
+import com.ycx.Handler.config.KeyBind.KeyBindHandler;
+import com.ycx.Handler.config.KeyBind.KeyBindProvider;
 import fi.dy.masa.malilib.config.ConfigManager;
 import fi.dy.masa.malilib.event.InputEventHandler;
 import net.fabricmc.api.ClientModInitializer;

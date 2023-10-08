@@ -1,4 +1,4 @@
-package com.ycx.ClientHandler.ScreenHandler;
+package com.ycx.Handler;
 
 import com.ycx.MainClient;
 import net.minecraft.client.MinecraftClient;

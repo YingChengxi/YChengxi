@@ -1,7 +1,7 @@
-package com.ycx.ClientHandler.Elytra;
+package com.ycx.Client.Elytra;
 
 import com.ycx.MainClient;
-import com.ycx.config.Configs;
+import com.ycx.Handler.config.Configs;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.util.math.Vec3d;

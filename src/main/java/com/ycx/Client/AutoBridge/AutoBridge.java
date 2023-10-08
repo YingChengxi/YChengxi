@@ -1,7 +1,7 @@
-package com.ycx.ClientHandler.AutoBridge;
+package com.ycx.Client.AutoBridge;
 
 import com.ycx.MainClient;
-import com.ycx.config.Configs;
+import com.ycx.Handler.config.Configs;
 import fi.dy.masa.malilib.util.PositionUtils;
 import net.minecraft.block.*;
 import net.minecraft.client.MinecraftClient;

@@ -1,8 +1,8 @@
-package com.ycx.config.ConfigHandler;
+package com.ycx.Handler.config.ConfigHandler;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.ycx.config.Category;
+import com.ycx.Handler.config.Category;
 import fi.dy.masa.malilib.config.ConfigUtils;
 import fi.dy.masa.malilib.config.IConfigHandler;
 import fi.dy.masa.malilib.util.JsonUtils;

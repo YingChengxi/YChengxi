@@ -1,6 +1,6 @@
-package com.ycx.ClientHandler.QuickStore;
+package com.ycx.Client.QuickStore;
 
-import com.ycx.ClientHandler.ScreenHandler.ClickSlot;
+import com.ycx.Handler.ClickSlot;
 import com.ycx.MainClient;
 import fi.dy.masa.itemscroller.recipes.RecipePattern;
 import fi.dy.masa.itemscroller.recipes.RecipeStorage;

@@ -1,4 +1,4 @@
-package com.ycx.ClientHandler;
+package com.ycx.Client;
 
 
 import fi.dy.masa.malilib.hotkeys.IHotkeyCallback;

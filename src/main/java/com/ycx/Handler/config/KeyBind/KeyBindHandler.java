@@ -1,6 +1,6 @@
-package com.ycx.config.KeyBind;
+package com.ycx.Handler.config.KeyBind;
 
-import com.ycx.config.ConfigHandler.GuiConfig;
+import com.ycx.Handler.config.ConfigHandler.GuiConfig;
 import fi.dy.masa.malilib.hotkeys.IHotkeyCallback;
 import fi.dy.masa.malilib.hotkeys.IKeybind;
 import fi.dy.masa.malilib.hotkeys.KeyAction;

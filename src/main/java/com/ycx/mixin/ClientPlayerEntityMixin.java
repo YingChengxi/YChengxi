@@ -1,11 +1,11 @@
 package com.ycx.mixin;
 
 
-import com.ycx.ClientHandler.AutoEat.AutoEat;
-import com.ycx.ClientHandler.Elytra.Elytra;
-import com.ycx.ClientHandler.AutoBridge.AutoBridge;
+import com.ycx.Client.AutoEat.AutoEat;
+import com.ycx.Client.Elytra.Elytra;
+import com.ycx.Client.AutoBridge.AutoBridge;
 import com.ycx.MainClient;
-import com.ycx.config.Configs;
+import com.ycx.Handler.config.Configs;
 
 import net.minecraft.client.input.Input;
 import net.minecraft.client.network.ClientPlayerEntity;

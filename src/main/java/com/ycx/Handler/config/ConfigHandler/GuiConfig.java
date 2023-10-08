@@ -1,8 +1,8 @@
-package com.ycx.config.ConfigHandler;
+package com.ycx.Handler.config.ConfigHandler;
 
 import com.ycx.MainClient;
-import com.ycx.config.Category;
-import com.ycx.config.Configs;
+import com.ycx.Handler.config.Category;
+import com.ycx.Handler.config.Configs;
 import fi.dy.masa.malilib.gui.GuiConfigsBase;
 import fi.dy.masa.malilib.gui.button.ButtonGeneric;
 import fi.dy.masa.malilib.util.StringUtils;

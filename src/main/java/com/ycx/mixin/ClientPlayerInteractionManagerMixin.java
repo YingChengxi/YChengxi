@@ -1,7 +1,7 @@
 package com.ycx.mixin;
 
-import com.ycx.ClientHandler.AutoEat.AutoEat;
-import com.ycx.config.Configs;
+import com.ycx.Client.AutoEat.AutoEat;
+import com.ycx.Handler.config.Configs;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.network.ClientPlayerInteractionManager;
 import net.minecraft.client.world.ClientWorld;
@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import static com.ycx.ClientHandler.QuickStore.QuickStorage.*;
+import static com.ycx.Client.QuickStore.QuickStorage.*;
 
 
 @Mixin(ClientPlayerInteractionManager.class)

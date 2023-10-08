@@ -1,8 +1,8 @@
-package com.ycx.ClientHandler.AutoEat;
+package com.ycx.Client.AutoEat;
 
-import com.ycx.ClientHandler.ScreenHandler.ClickSlot;
+import com.ycx.Handler.ClickSlot;
 import com.ycx.MainClient;
-import com.ycx.config.Configs;
+import com.ycx.Handler.config.Configs;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.entity.effect.StatusEffects;

@@ -1,7 +1,7 @@
-package com.ycx.config.ModMenu;
+package com.ycx.Handler.config.ModMenu;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
-import com.ycx.config.ConfigHandler.GuiConfig;
+import com.ycx.Handler.config.ConfigHandler.GuiConfig;
 
 public class ModMenuApi implements com.terraformersmc.modmenu.api.ModMenuApi {
     @Override
