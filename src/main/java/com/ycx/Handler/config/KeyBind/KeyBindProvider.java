@@ -13,6 +13,7 @@ public class KeyBindProvider implements IKeybindProvider {
         manager.addKeybindToMap(Configs.AUTOEAT.getKeybind());
         manager.addKeybindToMap(Configs.TEST.getKeybind());
         manager.addKeybindToMap(Configs.AUTOSTORE.getKeybind());
+        manager.addKeybindToMap(Configs.AUTOBRIDGE.getKeybind());
     }
 
     @Override
