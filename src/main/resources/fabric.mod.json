@@ -15,7 +15,7 @@
       "com.ycx.MainClient"
     ],
     "modmenu": [
-      "com.ycx.config.ModMenu.ModMenuApi"
+      "com.ycx.Handler.config.ConfigHandler.ModMenuApi"
     ]
   },
   "mixins": [
