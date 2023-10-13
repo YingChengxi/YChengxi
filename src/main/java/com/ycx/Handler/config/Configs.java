@@ -7,7 +7,7 @@ import fi.dy.masa.malilib.config.options.*;
 
 public class Configs {
     //打开配置界面快捷键
-    public static final ConfigHotkey                MENU_OPEN_KEY           = Category.GENERAL.add(new ConfigHotkey("打开设置界面", "", "打开配置界面"));
+    public static final ConfigHotkey                MENU_OPEN_KEY           = Category.GENERAL.add(new ConfigHotkey("打开设置界面", "F7", "打开配置界面"));
 
 
     //喷气鞘翅

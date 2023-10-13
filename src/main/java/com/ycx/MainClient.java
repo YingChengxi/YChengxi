@@ -30,5 +30,6 @@ public class MainClient implements ClientModInitializer {
 
 
         Players.command();
+
     }
 }

@@ -2,21 +2,21 @@ package com.ycx.Client.Command;
 
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;
+import com.ycx.Handler.Command.CommandBuilder;
+import com.ycx.Handler.Command.CommandSegment;
 
 import java.util.Arrays;
 
-import static com.ycx.Handler.CommandHelper.registerCommand;
 
 public class Players {
     public static void command() {
-        registerCommand(
-                "example",
-                Arrays.asList(StringArgumentType.string(), IntegerArgumentType.integer()),  //参数类型
-                Arrays.asList("playerName", "someNumber"),  //字段名称
-                Arrays.asList(
-                        Arrays.asList("Steve", "Alex"),     // Suggestions for playerName
-                        Arrays.asList("number","1")                            // No suggestions for someNumber
-                ),
+        CommandBuilder ycx = new CommandBuilder("ycx");
+        ycx.register(
+                new CommandSegment[]{
+                        new CommandSegment("playerName", StringArgumentType.string(), Arrays.asList("Steve", "Alex")),
+                        new CommandSegment("someNumber", IntegerArgumentType.integer(), null),
+
+                },
                 (context, argumentNames) -> {
                     String playerName = StringArgumentType.getString(context, argumentNames.get(0));
                     int someNumber = IntegerArgumentType.getInteger(context, argumentNames.get(1));
@@ -28,6 +28,6 @@ public class Players {
                 }
         );
 
-
     }
+
 }
