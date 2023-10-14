@@ -1,7 +1,7 @@
 package com.ycx;
 
 
-import com.ycx.Client.Command.Players;
+import com.ycx.Client.Players;
 
 public class Register {
     public static void register(){

@@ -1,4 +1,4 @@
-package com.ycx.Client.Elytra;
+package com.ycx.Client;
 
 import com.ycx.MainClient;
 import com.ycx.Handler.config.Configs;

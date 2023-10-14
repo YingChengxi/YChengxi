@@ -1,9 +1,9 @@
 package com.ycx.mixin;
 
 
-import com.ycx.Client.AutoEat.AutoEat;
-import com.ycx.Client.Elytra.Elytra;
-import com.ycx.Client.AutoBridge.AutoBridge;
+import com.ycx.Client.AutoEat;
+import com.ycx.Client.Elytra;
+import com.ycx.Client.AutoBridge;
 import com.ycx.MainClient;
 import com.ycx.Handler.config.Configs;
 

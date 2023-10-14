@@ -1,4 +1,4 @@
-package com.ycx.Client.Command;
+package com.ycx.Client;
 
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;

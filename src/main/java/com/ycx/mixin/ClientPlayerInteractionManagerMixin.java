@@ -1,6 +1,6 @@
 package com.ycx.mixin;
 
-import com.ycx.Client.AutoEat.AutoEat;
+import com.ycx.Client.AutoEat;
 import com.ycx.Handler.config.Configs;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.network.ClientPlayerInteractionManager;
@@ -9,18 +9,18 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
+
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import static com.ycx.Client.QuickStore.QuickStorage.*;
+import static com.ycx.Client.QuickStorage.*;
 
 
 @Mixin(ClientPlayerInteractionManager.class)
 public class ClientPlayerInteractionManagerMixin {
-
 
     @Inject(at = @At("HEAD"),method = "interactBlock")
     public void interactBlock(ClientPlayerEntity player, ClientWorld world, Hand hand, BlockHitResult hitResult, CallbackInfoReturnable<ActionResult> cir){
@@ -42,8 +42,7 @@ public class ClientPlayerInteractionManagerMixin {
     }
     @Inject(at = {@At("HEAD")},
             method = "stopUsingItem", cancellable = true)
-    private void onStopUsingItem(PlayerEntity player, CallbackInfo ci)
-    {
+    private void onStopUsingItem(PlayerEntity player, CallbackInfo ci) {
         if (AutoEat.eat){
             AutoEat.eat=false;
             ci.cancel();

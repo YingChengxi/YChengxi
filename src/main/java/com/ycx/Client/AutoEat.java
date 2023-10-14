@@ -1,4 +1,4 @@
-package com.ycx.Client.AutoEat;
+package com.ycx.Client;
 
 import com.ycx.Handler.ClickSlot;
 import com.ycx.MainClient;
@@ -105,6 +105,7 @@ public class AutoEat {
 
             inventory.selectedSlot = foodSlot;
             eat=true;
+            assert mc.interactionManager != null;
             mc.interactionManager.interactItem(player,player.world, Hand.MAIN_HAND);
 
         }else if(foodSlot == 40)
@@ -112,6 +113,7 @@ public class AutoEat {
             if(!isEating())
                 oldSlot = inventory.selectedSlot;
             eat=true;
+            assert mc.interactionManager != null;
             mc.interactionManager.interactItem(player,player.world, Hand.OFF_HAND);
 
         }else
@@ -142,10 +144,14 @@ public class AutoEat {
                 if (!Configs.AUTOEAT_LIST.getStrings().contains(item.toString())) continue;
             } else {
                 if (food == FoodComponents.CHORUS_FRUIT) continue;
+                assert food != null;
                 if (food.getStatusEffects().stream().anyMatch(pair -> pair.getFirst().getEffectType() == StatusEffects.POISON)) continue;
             }
 
-            if (maxPoints >= 0 && food.getHunger() > maxPoints) continue;
+            if (maxPoints >= 0) {
+                assert food != null;
+                if (food.getHunger() > maxPoints) continue;
+            }
 
             if ((bestFood == null || comparatorHunger.compare(food, bestFood) > 0)
                     || (comparatorHunger.compare(food, bestFood) == 0 && comparatorSaturationModifier.compare(food, bestFood) > 0)) {

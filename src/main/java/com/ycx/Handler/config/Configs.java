@@ -37,9 +37,14 @@ public class Configs {
     public static final ConfigBoolean               DEBUG                   = Category.DEBUG.add(new ConfigBoolean("DEBUG显示开关", false, "DEBUG显示开关"));
     public static final ConfigHotkey                TEST                    = Category.DEBUG.add(new ConfigHotkey("Test", "", "没有任何作用"));
 
+
     //自动搭路
     public static final ConfigBooleanHotkeyed       AUTOBRIDGE              = Category.GENERAL.add(new ConfigBooleanHotkeyed("自动搭路", false, "", "使用快捷栏中的方块自动搭路"));
     public static final ConfigBoolean               AUTOBRIDGE_INAIR        = Category.FACTOR.add(new ConfigBoolean("自动搭路-浮空搭路", false, "斗宗强者"));
+
+
+    //禁用药水时间
+    public static final ConfigBooleanHotkeyed       POTIONFROZEN             = Category.CLIENT.add(new ConfigBooleanHotkeyed("冻结效果状态", false, "", "冻结效果状态时间"));
 
 
 }

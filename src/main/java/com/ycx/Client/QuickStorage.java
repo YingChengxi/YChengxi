@@ -1,4 +1,4 @@
-package com.ycx.Client.QuickStore;
+package com.ycx.Client;
 
 import com.ycx.Handler.ClickSlot;
 import com.ycx.MainClient;
