@@ -12,7 +12,6 @@ public class Test implements IHotkeyCallback {
     public boolean onKeyAction(KeyAction action, IKeybind key) {
 
 
-
        return true;
     }
 }

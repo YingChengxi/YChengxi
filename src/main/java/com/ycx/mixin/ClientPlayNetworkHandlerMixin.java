@@ -1,5 +1,7 @@
 package com.ycx.mixin;
 
+import com.ycx.Client.AutoDupe;
+import com.ycx.Client.QuickStorage;
 import com.ycx.MainClient;
 import com.ycx.Handler.config.Configs;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
@@ -16,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import static com.ycx.Client.QuickStorage.*;
+
 
 @Mixin(ClientPlayNetworkHandler.class)
 public class ClientPlayNetworkHandlerMixin {
@@ -50,8 +52,9 @@ public class ClientPlayNetworkHandlerMixin {
 
     @Inject(at = @At("TAIL"),method = "onInventory")
     public void onInventory(InventoryS2CPacket packet, CallbackInfo ci){
-        if (runningDrop) dropItem();
-        if (runningStore) storeItem();
+        if (QuickStorage.runningDrop) QuickStorage.dropItem();
+        if (QuickStorage.runningStore) QuickStorage.storeItem();
+        if (AutoDupe.runningDupe) AutoDupe.dupeItem();
     }
 
 }

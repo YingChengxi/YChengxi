@@ -1,7 +1,10 @@
 package com.ycx.mixin;
 
+import com.ycx.Client.AutoDupe;
 import com.ycx.Client.AutoEat;
+import com.ycx.Client.QuickStorage;
 import com.ycx.Handler.config.Configs;
+import com.ycx.MainClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.network.ClientPlayerInteractionManager;
 import net.minecraft.client.world.ClientWorld;
@@ -16,7 +19,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import static com.ycx.Client.QuickStorage.*;
+
 
 
 @Mixin(ClientPlayerInteractionManager.class)
@@ -24,20 +27,21 @@ public class ClientPlayerInteractionManagerMixin {
 
     @Inject(at = @At("HEAD"),method = "interactBlock")
     public void interactBlock(ClientPlayerEntity player, ClientWorld world, Hand hand, BlockHitResult hitResult, CallbackInfoReturnable<ActionResult> cir){
-        if(isLoadMod && Configs.AUTOSTORE.getBooleanValue() && !runningDrop && invAvailable()){
-            runningStore = true;
+        if (QuickStorage.isLoadMod && Configs.AUTOSTORE.getBooleanValue() && !QuickStorage.runningDrop && QuickStorage.invAvailable()){
+            QuickStorage.runningStore = true;
             //System.out.println("Store start\n");
-
         }
-
+        if (AutoDupe.isLoadMod && Configs.AUTODUPE.getBooleanValue() && AutoDupe.invAvailable()){
+            AutoDupe.runningDupe = true;
+        }
     }
     @Inject(at = @At("HEAD"),method = "attackBlock")
     public void attackBlock(CallbackInfoReturnable<Boolean> cir){
-        if(isLoadMod && Configs.AUTOSTORE.getBooleanValue() && !runningStore && invAvailable()){
-            runningDrop = true;
+        if(QuickStorage.isLoadMod && Configs.AUTOSTORE.getBooleanValue() && !QuickStorage.runningStore && QuickStorage.invAvailable()){
+            QuickStorage.runningDrop = true;
             //System.out.println("Drop start\n");
-            assert mc.interactionManager != null;
-            mc.interactionManager.interactBlock(mc.player, mc.world, Hand.MAIN_HAND, (BlockHitResult) mc.crosshairTarget);
+            assert MainClient.MC.interactionManager != null;
+            MainClient.MC.interactionManager.interactBlock(MainClient.MC.player, MainClient.MC.world, Hand.MAIN_HAND, (BlockHitResult) MainClient.MC.crosshairTarget);
         }
     }
     @Inject(at = {@At("HEAD")},
@@ -48,5 +52,7 @@ public class ClientPlayerInteractionManagerMixin {
             ci.cancel();
         }
     }
+
+
 
 }

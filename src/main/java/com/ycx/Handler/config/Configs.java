@@ -47,4 +47,8 @@ public class Configs {
     public static final ConfigBooleanHotkeyed       POTIONFROZEN             = Category.CLIENT.add(new ConfigBooleanHotkeyed("冻结效果状态", false, "", "冻结效果状态时间"));
 
 
+    //合成复制助手
+    public static final ConfigBooleanHotkeyed       AUTODUPE               = Category.GENERAL.add(new ConfigBooleanHotkeyed("合成复制助手", false, "", "根据ItemScroller模组的当前选中配方，\n手拿潜影盒右键合成台复制物品，\n依赖快捷潜影盒mod"));
+
+
 }
