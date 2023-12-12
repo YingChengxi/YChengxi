@@ -22,8 +22,8 @@ public class AutoBridge {
     public static void bridge() {
         if (mc.player == null || mc.world == null) return;
 
-        BlockPos belowPlayer = new BlockPos(mc.player.getPos()).down();
-        if (!mc.world.getBlockState(belowPlayer).getMaterial().isReplaceable()) return;
+        BlockPos belowPlayer = new BlockPos(mc.player.getBlockPos()).down();
+        if (!mc.world.getBlockState(belowPlayer).isReplaceable()) return;
 
         int newSlot = findValidBlockSlot();
         if (newSlot == -1) return;
@@ -47,7 +47,7 @@ public class AutoBridge {
             BlockState state = block.getDefaultState();
             if (!state.isFullCube(EmptyBlockView.INSTANCE, BlockPos.ORIGIN)) continue;
 
-            if (block instanceof FallingBlock && FallingBlock.canFallThrough(mc.world.getBlockState(new BlockPos(mc.player.getPos()).down().down())))
+            if (block instanceof FallingBlock && FallingBlock.canFallThrough(mc.world.getBlockState(new BlockPos(mc.player.getBlockPos()).down().down())))
                 continue;
 
             return i;
@@ -87,8 +87,8 @@ public class AutoBridge {
             mc.player.networkHandler.sendPacket(packet);
 
             BlockHitResult hitResult = new BlockHitResult(hitVec, side, pos, false);
-            mc.interactionManager.interactBlock(mc.player, mc.world, Hand.MAIN_HAND, hitResult);
-            mc.interactionManager.interactItem(mc.player, mc.world, Hand.MAIN_HAND);
+            mc.interactionManager.interactBlock(mc.player,  Hand.MAIN_HAND, hitResult);
+            mc.interactionManager.interactItem(mc.player, Hand.MAIN_HAND);
             mc.player.swingHand(Hand.MAIN_HAND);
 
             return true;
@@ -101,7 +101,7 @@ public class AutoBridge {
 
             ItemStack stack = mc.player.getMainHandStack();
             if (!stack.isEmpty() && stack.getItem() instanceof BlockItem) {
-                mc.interactionManager.interactBlock(mc.player, mc.world, Hand.MAIN_HAND, context);
+                mc.interactionManager.interactBlock(mc.player, Hand.MAIN_HAND, context);
                 return true;
             }
         }

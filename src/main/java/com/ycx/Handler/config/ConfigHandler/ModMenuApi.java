@@ -7,7 +7,8 @@ public class ModMenuApi implements com.terraformersmc.modmenu.api.ModMenuApi {
     public ConfigScreenFactory<?> getModConfigScreenFactory() {
         return (screen) -> {
             GuiConfig gui = new GuiConfig();
-            gui.setParentGui(screen);
+//            gui.setParentGui(screen);
+            gui.setParent(screen);
             return gui;
         };
     }

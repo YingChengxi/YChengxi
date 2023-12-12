@@ -26,7 +26,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class ClientPlayerInteractionManagerMixin {
 
     @Inject(at = @At("HEAD"),method = "interactBlock")
-    public void interactBlock(ClientPlayerEntity player, ClientWorld world, Hand hand, BlockHitResult hitResult, CallbackInfoReturnable<ActionResult> cir){
+    public void interactBlock(ClientPlayerEntity player, Hand hand, BlockHitResult hitResult, CallbackInfoReturnable<ActionResult> cir){
         if (QuickStorage.isLoadMod && Configs.AUTOSTORE.getBooleanValue() && !QuickStorage.runningDrop && QuickStorage.invAvailable()){
             QuickStorage.runningStore = true;
             //System.out.println("Store start\n");
@@ -41,7 +41,7 @@ public class ClientPlayerInteractionManagerMixin {
             QuickStorage.runningDrop = true;
             //System.out.println("Drop start\n");
             assert MainClient.MC.interactionManager != null;
-            MainClient.MC.interactionManager.interactBlock(MainClient.MC.player, MainClient.MC.world, Hand.MAIN_HAND, (BlockHitResult) MainClient.MC.crosshairTarget);
+            MainClient.MC.interactionManager.interactBlock(MainClient.MC.player, Hand.MAIN_HAND, (BlockHitResult) MainClient.MC.crosshairTarget);
         }
     }
     @Inject(at = {@At("HEAD")},

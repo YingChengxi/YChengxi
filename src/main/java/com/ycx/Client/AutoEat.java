@@ -106,7 +106,7 @@ public class AutoEat {
             inventory.selectedSlot = foodSlot;
             eat=true;
             assert mc.interactionManager != null;
-            mc.interactionManager.interactItem(player,player.world, Hand.MAIN_HAND);
+            mc.interactionManager.interactItem(player,Hand.MAIN_HAND);
 
         }else if(foodSlot == 40)
         {
@@ -114,7 +114,7 @@ public class AutoEat {
                 oldSlot = inventory.selectedSlot;
             eat=true;
             assert mc.interactionManager != null;
-            mc.interactionManager.interactItem(player,player.world, Hand.OFF_HAND);
+            mc.interactionManager.interactItem(player, Hand.OFF_HAND);
 
         }else
         {

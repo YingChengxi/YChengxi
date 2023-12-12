@@ -7,7 +7,7 @@ import com.ycx.Handler.Command.CommandSegment;
 import com.ycx.MainClient;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.Text;
 
 import java.util.Arrays;
 import java.util.List;
@@ -33,7 +33,7 @@ public class Players {
                     if (mc.player == null) return 0;
 
                     if (!isLoadMod){
-                        mc.player.sendMessage(new LiteralText("未加载carpe模组"), false);
+                        mc.player.sendMessage(Text.of("未加载carpe模组"), false);
                         return 1;
                     }
 
@@ -58,17 +58,18 @@ public class Players {
                                 try {
                                     Thread.sleep(20); // 延时
                                     String commandString = "/player " + playerName + " " + finalOperate;
-                                    mc.player.sendChatMessage(commandString);
+//                                    mc.player.sendChatMessage(commandString);
+                                    mc.player.sendMessage(Text.of(commandString));
 
                                 } catch (Exception e) {
-                                    mc.player.sendMessage(new LiteralText("未知错误"), false);
+                                    mc.player.sendMessage(Text.of("未知错误"), false);
                                 }
                             });
 
                         }
                         executor.shutdown();
                     } else {
-                        mc.player.sendMessage(new LiteralText("错误的参数范围！"), false);
+                        mc.player.sendMessage(Text.of("错误的参数范围！"), false);
                     }
                     return 1;
                 }
