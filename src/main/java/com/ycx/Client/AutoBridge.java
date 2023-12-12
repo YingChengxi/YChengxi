@@ -47,8 +47,8 @@ public class AutoBridge {
             BlockState state = block.getDefaultState();
             if (!state.isFullCube(EmptyBlockView.INSTANCE, BlockPos.ORIGIN)) continue;
 
-            if (block instanceof FallingBlock && FallingBlock.canFallThrough(mc.world.getBlockState(new BlockPos(mc.player.getPos()).down().down())))
-                continue;
+            //if (block instanceof FallingBlock && FallingBlock.canFallThrough(mc.world.getBlockState(new BlockPos(mc.player.getPos()).down().down())))
+            //    continue;
 
             return i;
         }
