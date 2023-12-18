@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class ClientCommonNetworkHandlerMixin {
     @Final
     @Shadow
-    private ClientConnection connection;
+    protected ClientConnection connection;
     @Inject(at = @At("HEAD"),method = "sendPacket", cancellable = true)
     public void sendPacket(Packet<?> packet, CallbackInfo ci) {
 
