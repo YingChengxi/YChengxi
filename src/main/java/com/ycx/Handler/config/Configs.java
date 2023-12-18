@@ -39,7 +39,7 @@ public class Configs {
 
 
     //自动搭路
-    public static final ConfigBooleanHotkeyed       AUTOBRIDGE              = Category.GENERAL.add(new ConfigBooleanHotkeyed("自动搭路", false, "", "使用快捷栏中的方块自动搭路"));
+    public static final ConfigBooleanHotkeyed       AUTOBRIDGE              = Category.GENERAL.add(new ConfigBooleanHotkeyed("自动搭路", false, "", "使用快捷栏中的方块自动搭路，Shift临时关闭"));
     public static final ConfigBoolean               AUTOBRIDGE_INAIR        = Category.FACTOR.add(new ConfigBoolean("自动搭路-浮空搭路", false, "斗宗强者"));
 
 

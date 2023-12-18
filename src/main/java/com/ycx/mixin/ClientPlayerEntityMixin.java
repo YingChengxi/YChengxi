@@ -45,7 +45,7 @@ public class ClientPlayerEntityMixin {
 
 
 
-    @Redirect(at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/ClientPlayerEntity;hasVehicle()Z",ordinal = 0), method = "tickMovement()V")
+    @Redirect(at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/ClientPlayerEntity;hasVehicle()Z",ordinal = 1), method = "tickMovement()V")
     private boolean usingItemSlowDown(ClientPlayerEntity player)
     {
         if(Configs.SLOWDOWN.getBooleanValue())
