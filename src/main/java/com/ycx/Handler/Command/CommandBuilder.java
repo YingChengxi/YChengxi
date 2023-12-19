@@ -4,6 +4,7 @@ import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
+import com.ycx.Register;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
 
@@ -18,11 +19,12 @@ public class CommandBuilder {
     }
 
     public void register(CommandSegment[] segments, CommandExecutor commandExecutor) {
+
         LiteralArgumentBuilder<FabricClientCommandSource> command = ClientCommandManager.literal(commandName);
         buildArgumentRecursive(command, segments, 0, commandExecutor);
-        if (ClientCommandManager.getActiveDispatcher() != null) {
-            ClientCommandManager.getActiveDispatcher().register(command);
-        }
+
+        Register.dispatcher.register(command);
+
     }
 
     private static ArgumentBuilder<FabricClientCommandSource, ?> buildArgumentRecursive(

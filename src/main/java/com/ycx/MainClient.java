@@ -27,6 +27,8 @@ public class MainClient implements ClientModInitializer {
         Configs.MENU_OPEN_KEY.getKeybind().setCallback(new KeyBindHandler());
         Configs.TEST.getKeybind().setCallback(new Test());
 
+
+
         Register.register();
 
     }
