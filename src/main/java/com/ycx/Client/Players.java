@@ -57,9 +57,10 @@ public class Players {
                             executor.submit(() -> {
                                 try {
                                     Thread.sleep(20); // 延时
-                                    String commandString = "/player " + playerName + " " + finalOperate;
+                                    String commandString = "player " + playerName + " " + finalOperate;
 //                                    mc.player.sendChatMessage(commandString);
-                                    mc.player.sendMessage(Text.of(commandString));
+                                    mc.player.networkHandler.sendChatCommand(commandString);
+//                                    mc.player.sendMessage(Text.of(commandString));
 
                                 } catch (Exception e) {
                                     mc.player.sendMessage(Text.of("未知错误"), false);

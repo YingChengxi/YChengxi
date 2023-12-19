@@ -4,8 +4,9 @@ import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
-import com.ycx.Register;
+
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
+import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
 
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class CommandBuilder {
         LiteralArgumentBuilder<FabricClientCommandSource> command = ClientCommandManager.literal(commandName);
         buildArgumentRecursive(command, segments, 0, commandExecutor);
 
-        Register.dispatcher.register(command);
+        ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) -> dispatcher.register(command));
 
     }
 
