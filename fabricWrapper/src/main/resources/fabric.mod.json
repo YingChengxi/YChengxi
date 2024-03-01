@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "${mod_id}",
+  "version": "${mod_version}",
+  "icon": "assets/icon.png",
+  "name": "${mod_name}",
+  "description": "${mod_description}",
+
+  "authors": [
+    "YChengxi"
+  ],
+
+  "contact": {
+    "homepage": "${mod_homepage}",
+    "issues": "${mod_sources}/issues",
+    "sources": "${mod_sources}"
+  },
+
+  "license": "${mod_license}",
+  "environment": "client",
+
+  "entrypoints": {
+    "modmenu": [
+      "com.ycx.Handler.config.ConfigHandler.ModMenuApi"
+    ]
+  },
+  "depends": {
+    "malilib": "*"
+  },
+  "custom": {
+    "modmenu:clientsideOnly": true
+  }
+}

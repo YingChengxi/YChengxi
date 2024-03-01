@@ -1,0 +1,21 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.ycx.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "ClientCommonNetworkHandlerMixin",
+    "ClientPlayerEntityMixin",
+    "ClientPlayerInteractionManagerMixin",
+    "ClientPlayNetworkHandlerMixin",
+    "GameRendererMixin",
+    "MinecraftClientMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": [
+    "CamelEntityMixin",
+    "StatusEffectInstanceMixin"
+  ]
+}

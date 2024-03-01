@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "${mod_id}-${minecraft_version_id}",
+  "version": "${mod_version}",
+  "icon": "assets/icon.png",
+  "name": "${mod_name} for ${minecraft_version}",
+  "description": "${mod_description}",
+
+  "authors": [
+    "YChengxi"
+  ],
+
+  "contact": {
+    "homepage": "${mod_homepage}",
+    "issues": "${mod_sources}/issues",
+    "sources": "${mod_sources}"
+  },
+
+  "license": "${mod_license}",
+  "environment": "client",
+
+  "entrypoints": {
+    "client": [
+      "com.ycx.MainClient"
+    ],
+    "modmenu": [
+      "com.ycx.Handler.config.ConfigHandler.ModMenuApi"
+    ]
+  },
+
+  "mixins": [
+    "ycx.mixins.json"
+  ],
+
+  "depends": {
+    "malilib": "*",
+    "minecraft": "${minecraft_dependency}"
+  },
+
+  "custom": {
+    "modmenu:clientsideOnly": true,
+    "modmenu:parent": "${mod_id}",
+    "modmenu": {
+      "parent": "${mod_id}"
+    }
+  }
+
+
+}
+
