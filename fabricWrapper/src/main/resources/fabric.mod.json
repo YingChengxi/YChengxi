@@ -2,7 +2,6 @@
   "schemaVersion": 1,
   "id": "${mod_id}",
   "version": "${mod_version}",
-  "icon": "assets/icon.png",
   "name": "${mod_name}",
   "description": "${mod_description}",
 
@@ -19,11 +18,6 @@
   "license": "${mod_license}",
   "environment": "client",
 
-  "entrypoints": {
-    "modmenu": [
-      "com.ycx.Handler.config.ConfigHandler.ModMenuApi"
-    ]
-  },
   "depends": {
     "malilib": "*"
   },

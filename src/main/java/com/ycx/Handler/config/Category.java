@@ -2,6 +2,7 @@ package com.ycx.Handler.config;
 
 import com.google.common.collect.ImmutableList;
 import fi.dy.masa.malilib.config.IConfigBase;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,7 @@ public enum Category {
     DEBUG("实验性");
 
 
+    @Getter
     private final String key;
     private final List<IConfigBase> configs;
 
@@ -32,7 +34,4 @@ public enum Category {
         return ImmutableList.copyOf(this.configs);
     }
 
-    public String getKey() {
-        return this.key;
-    }
 }
