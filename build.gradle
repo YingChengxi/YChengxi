@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat
+
 plugins {
     id("fabric-loom").version("1.5-SNAPSHOT").apply(false)
     id("maven-publish")
@@ -56,7 +58,13 @@ ext {
     }
 }
 
-setVersion("${project.mod_version}.${project.getVersionPatch([])}+${project.getVersionGit([])}-${project.getVersionType()}")
+static def getCurrentTimestamp() {
+    Calendar calendar = Calendar.getInstance();
+    int year = calendar.get(Calendar.YEAR) % 100;
+    int weekOfYear = calendar.get(Calendar.WEEK_OF_YEAR);
+    return String.format("%02d%02d", year, weekOfYear);
+}
+setVersion("${project.mod_version}-${getCurrentTimestamp()}.${project.getVersionPatch([])}")
 
 tasks.register("cleanPreprocessSources") {
     it.group("${project.mod_id}")
