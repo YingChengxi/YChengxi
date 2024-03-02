@@ -1,6 +1,5 @@
 package com.ycx.mixin;
 
-
 import com.ycx.Handler.config.Configs;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.passive.CamelEntity;
@@ -11,7 +10,6 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
 
 @Mixin(CamelEntity.class)
 public class CamelEntityMixin {

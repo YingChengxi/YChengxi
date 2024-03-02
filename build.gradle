@@ -8,12 +8,12 @@ plugins {
 }
 
 preprocess {
-//    def mc1182 = createNode("1.18.2", 1_18_02, "mojang")
+    def mc1182 = createNode("1.18.2", 1_18_02, "mojang")
     def mc1202 = createNode("1.20.2", 1_20_02, "mojang")
     def mc1204 = createNode("1.20.4", 1_20_04, "mojang")
 
 
-//   mc1182.link(mc1202, null)
+    mc1182.link(mc1202, null)
     mc1202.link(mc1204, null)
 }
 
@@ -62,9 +62,10 @@ static def getCurrentTimestamp() {
     Calendar calendar = Calendar.getInstance();
     int year = calendar.get(Calendar.YEAR) % 100;
     int weekOfYear = calendar.get(Calendar.WEEK_OF_YEAR);
-    return String.format("%02d%02d", year, weekOfYear);
+    int minuteOfWeek = calendar.get(Calendar.DAY_OF_WEEK) * 24 + calendar.get(Calendar.HOUR) * 60 + + calendar.get(Calendar.MINUTE);
+    return String.format("%02d%02d.%d", year, weekOfYear, minuteOfWeek);
 }
-setVersion("${project.mod_version}-${getCurrentTimestamp()}.${project.getVersionPatch([])}")
+setVersion("${project.mod_version}-${getCurrentTimestamp()}")
 
 tasks.register("cleanPreprocessSources") {
     it.group("${project.mod_id}")
