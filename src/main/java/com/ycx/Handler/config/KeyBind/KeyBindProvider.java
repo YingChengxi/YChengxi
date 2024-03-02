@@ -17,7 +17,9 @@ public class KeyBindProvider implements IKeybindProvider {
         manager.addKeybindToMap(Configs.AUTODUPE.getKeybind());
         manager.addKeybindToMap(Configs.SHOULDATTACK.getKeybind());
         manager.addKeybindToMap(Configs.ANTIHUNGER.getKeybind());
+        //#if MC >= 12002
         manager.addKeybindToMap(Configs.CAMELDASHCOOLDOWN.getKeybind());
+        //#endif
         manager.addKeybindToMap(Configs.MOUNTJUMPSTRENGTH.getKeybind());
     }
 

@@ -23,7 +23,11 @@ public class AutoBridge {
         if (mc.player == null || mc.world == null) return;
 
         BlockPos belowPlayer = new BlockPos(mc.player.getBlockPos()).down();
+        //#if MC >= 12002
         if (!mc.world.getBlockState(belowPlayer).isReplaceable()) return;
+        //#else
+        //$$ if (!mc.world.getBlockState(belowPlayer).getMaterial().isReplaceable()) return;
+        //#endif
 
         int newSlot = findValidBlockSlot();
         if (newSlot == -1) return;
@@ -87,8 +91,13 @@ public class AutoBridge {
             mc.player.networkHandler.sendPacket(packet);
 
             BlockHitResult hitResult = new BlockHitResult(hitVec, side, pos, false);
+            //#if MC >= 12002
             mc.interactionManager.interactBlock(mc.player,  Hand.MAIN_HAND, hitResult);
             mc.interactionManager.interactItem(mc.player, Hand.MAIN_HAND);
+            //#else
+            //$$ mc.interactionManager.interactBlock(mc.player, mc.world, Hand.MAIN_HAND, hitResult);
+            //$$ mc.interactionManager.interactItem(mc.player, mc.world, Hand.MAIN_HAND);
+            //#endif
             mc.player.swingHand(Hand.MAIN_HAND);
 
             return true;
@@ -101,7 +110,11 @@ public class AutoBridge {
 
             ItemStack stack = mc.player.getMainHandStack();
             if (!stack.isEmpty() && stack.getItem() instanceof BlockItem) {
+                //#if MC >= 12002
                 mc.interactionManager.interactBlock(mc.player, Hand.MAIN_HAND, context);
+                //#else
+                //$$ mc.interactionManager.interactBlock(mc.player, mc.world, Hand.MAIN_HAND, context);
+                //#endif
                 return true;
             }
         }

@@ -18,14 +18,20 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-
+//#if MC <12002
+//$$ import net.minecraft.client.world.ClientWorld;
+//#endif
 
 
 @Mixin(ClientPlayerInteractionManager.class)
 public class ClientPlayerInteractionManagerMixin {
 
     @Inject(at = @At("HEAD"),method = "interactBlock")
+    //#if MC >= 12002
     public void interactBlock(ClientPlayerEntity player, Hand hand, BlockHitResult hitResult, CallbackInfoReturnable<ActionResult> cir){
+    //#else
+    //$$ public void interactBlock(ClientPlayerEntity player, ClientWorld world, Hand hand, BlockHitResult hitResult, CallbackInfoReturnable<ActionResult> cir){
+    //#endif
         if (QuickStorage.isLoadMod && Configs.AUTOSTORE.getBooleanValue() && !QuickStorage.runningDrop && QuickStorage.invAvailable()){
             QuickStorage.runningStore = true;
             //System.out.println("Store start\n");
@@ -40,7 +46,11 @@ public class ClientPlayerInteractionManagerMixin {
             QuickStorage.runningDrop = true;
             //System.out.println("Drop start\n");
             assert MainClient.MC.interactionManager != null;
+            //#if MC >= 12002
             MainClient.MC.interactionManager.interactBlock(MainClient.MC.player, Hand.MAIN_HAND, (BlockHitResult) MainClient.MC.crosshairTarget);
+            //#else
+            //$$ MainClient.MC.interactionManager.interactBlock(MainClient.MC.player, MainClient.MC.world, Hand.MAIN_HAND, (BlockHitResult) MainClient.MC.crosshairTarget);
+            //#endif
         }
     }
     @Inject(at = {@At("HEAD")},

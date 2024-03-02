@@ -4,7 +4,9 @@
   "package": "com.ycx.mixin",
   "compatibilityLevel": "JAVA_17",
   "client": [
+    //#if MC >= 12002
     "ClientCommonNetworkHandlerMixin",
+    //#endif
     "ClientPlayerEntityMixin",
     "ClientPlayerInteractionManagerMixin",
     "ClientPlayNetworkHandlerMixin",
@@ -15,7 +17,9 @@
     "defaultRequire": 1
   },
   "mixins": [
+    //#if MC >= 12002
     "CamelEntityMixin",
+    //#endif
     "StatusEffectInstanceMixin"
   ]
 }

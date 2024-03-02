@@ -1,3 +1,4 @@
+//#if MC >= 12002
 package com.ycx.mixin;
 
 import com.ycx.Handler.config.Configs;
@@ -67,3 +68,4 @@ public class ClientCommonNetworkHandlerMixin {
 
     }
 }
+//#endif

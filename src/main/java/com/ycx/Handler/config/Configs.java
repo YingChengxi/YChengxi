@@ -54,10 +54,10 @@ public class Configs {
     //合成复制助手
     public static final ConfigBooleanHotkeyed       AUTODUPE                 = Category.GENERAL.add(new ConfigBooleanHotkeyed("合成复制助手", false, "", "根据ItemScroller模组的当前选中配方，\n手拿潜影盒右键合成台复制物品，\n依赖快捷潜影盒mod"));
 
-
+    //#if MC >= 12002
     //禁用骆驼跳跃冷却
     public static final ConfigBooleanHotkeyed       CAMELDASHCOOLDOWN        = Category.BAN.add(new ConfigBooleanHotkeyed("禁用骆驼跳跃冷却", false, "", "使骆驼可以连续跳跃"));
-
+    //#endif
 
     //坐骑蓄力修改
     public static final ConfigBooleanHotkeyed       MOUNTJUMPSTRENGTH        = Category.GENERAL.add(new ConfigBooleanHotkeyed("坐骑蓄力修改", false, "", "使坐骑跳跃蓄力进度条始终保持在设定位置，\n详细设置见参数。"));

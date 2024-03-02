@@ -32,9 +32,11 @@ public class QuickShulkerUtils {
             return false;
         }
         if (Block.getBlockFromItem(itemStack.getItem()) instanceof ShulkerBoxBlock){
+            PacketByteBuf buf = new PacketByteBuf(Unpooled.buffer());
+            buf.writeInt(slot);
             ClientPlayNetworking.send(
                     new Identifier("quickshulker", "open_shulker_packet"),
-                    new PacketByteBuf(Unpooled.buffer()).writeInt(slot)
+                    new PacketByteBuf(buf)
             );
             return true;
         }

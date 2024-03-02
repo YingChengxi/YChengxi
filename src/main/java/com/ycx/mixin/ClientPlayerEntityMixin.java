@@ -62,8 +62,11 @@ public class ClientPlayerEntityMixin {
     }
 
 
-
+    //#if MC < 12002
+    //$$ @Redirect(at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/ClientPlayerEntity;hasVehicle()Z",ordinal = 0), method = "tickMovement()V")
+    //#else
     @Redirect(at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/ClientPlayerEntity;hasVehicle()Z",ordinal = 1), method = "tickMovement()V")
+    //#endif
     private boolean usingItemSlowDown(ClientPlayerEntity player)
     {
         if(Configs.SLOWDOWN.getBooleanValue())
