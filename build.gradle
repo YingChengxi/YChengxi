@@ -60,7 +60,7 @@ static def getCurrentTimestamp() {
     Calendar calendar = Calendar.getInstance()
     int year = calendar.get(Calendar.YEAR) % 100
     int weekOfYear = calendar.get(Calendar.WEEK_OF_YEAR)
-    int minuteOfWeek = calendar.get(Calendar.DAY_OF_WEEK) * 24 + calendar.get(Calendar.HOUR) * 60 + + calendar.get(Calendar.MINUTE)
+    int minuteOfWeek = (calendar.get(Calendar.DAY_OF_WEEK) - 1) * 1440 + calendar.get(Calendar.HOUR) * 60 + calendar.get(Calendar.MINUTE)
     return String.format("%02d%02d.%d", year, weekOfYear, minuteOfWeek)
 }
 setVersion("${project.mod_version}-${getCurrentTimestamp()}")

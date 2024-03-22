@@ -21,6 +21,7 @@ public class KeyBindProvider implements IKeybindProvider {
         manager.addKeybindToMap(Configs.CAMELDASHCOOLDOWN.getKeybind());
         //#endif
         manager.addKeybindToMap(Configs.MOUNTJUMPSTRENGTH.getKeybind());
+        manager.addKeybindToMap(Configs.MUTEATNOFOCUS.getKeybind());
     }
 
     @Override

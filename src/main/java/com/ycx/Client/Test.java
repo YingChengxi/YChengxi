@@ -11,7 +11,6 @@ public class Test implements IHotkeyCallback {
     @Override
     public boolean onKeyAction(KeyAction action, IKeybind key) {
 
-
        return true;
     }
 }

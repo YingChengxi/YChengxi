@@ -64,4 +64,8 @@ public class Configs {
     public static final ConfigDouble                JUMPSTRENGTH_FACTOR      = Category.FACTOR.add(new ConfigDouble("坐骑蓄力修改-进度条百分比", 1, 0, 1, "使坐骑跳跃蓄力进度条始终保持在设定位置"));
 
 
+    //失去焦点时静音
+    public static final ConfigBooleanHotkeyed       MUTEATNOFOCUS           = Category.GENERAL.add(new ConfigBooleanHotkeyed("自动静音", false, "", "在游戏失去焦点时自动静音"));
+    public static final ConfigDouble                SOUNDVALUE              = Category.HIDEFACTOR.add(new ConfigDouble("soundValue", -1, -1, 1, "soundValue"));
+
 }

@@ -24,6 +24,7 @@ public class GuiConfig extends GuiConfigsBase {
         int x = 10, y = 26;
         // tab buttons are set
         for (Category category : Category.values()) {
+            if (category == Category.HIDEFACTOR) continue;
             if (category == Category.DEBUG && !Configs.DEBUG.getBooleanValue()) continue;
             ButtonGeneric tabButton = new TabButton(category, x, y, -1, 20, StringUtils.translate(category.getKey()));
             tabButton.setEnabled(GuiConfig.currentTab != category );

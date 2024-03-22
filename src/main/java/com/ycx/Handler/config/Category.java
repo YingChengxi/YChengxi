@@ -13,7 +13,8 @@ public enum Category {
     CLIENT("仅客户端"),
     FACTOR("参数"),
     BAN("禁用"),
-    DEBUG("实验性");
+    DEBUG("实验性"),
+    HIDEFACTOR("HIDE");
 
 
     @Getter
